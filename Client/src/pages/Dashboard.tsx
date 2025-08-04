@@ -9,8 +9,8 @@ import Header from "../components/ui/Header";
 import ContentSection from "../components/ui/ContentSection";
 import filterData from "../utils/filterData";
 import { useSelector } from "react-redux";
-import { RootState } from "../config/redux/store";
-import { Content } from "../config/redux/contentSlice";
+import type { RootState } from "../config/redux/store";
+import type { Content } from "../config/redux/contentSlice";
 import Plus from "../components/Icons/Plus";
 
 const Dashboard = () => {
@@ -36,7 +36,7 @@ const Dashboard = () => {
         setFilterContent(filter);
         setIsSidebarOpen(false);
     }
-    
+
     useEffect(
         () => filterData(filterContent, content, setDataToRender),
         [filterContent, content]

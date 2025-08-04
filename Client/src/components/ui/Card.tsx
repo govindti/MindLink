@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { ReactElement } from "react"
 import Share from "../Icons/Share";
 import Delete from "../Icons/Delete";
 import YouTube from "../Icons/YouTube";
@@ -57,10 +58,10 @@ export const Card = ({
   isSharedBrain,
 }: cardProps) => {
   const icon: {
-    [key: string]: JSX.Element;
-    YouTube: JSX.Element;
-    "Twitter/X": JSX.Element;
-    Document: JSX.Element;
+    [key: string]: ReactElement;
+    YouTube: ReactElement;
+    "Twitter/X": ReactElement;
+    Document: ReactElement;
   } = {
     YouTube: <YouTube />,
     "Twitter/X": <Twitter />,

@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import type { ChangeEvent } from "react";
 import Eye from "../components/Icons/Eye";
 import EyeSlash from "../components/Icons/EyeSlash";
 
@@ -7,7 +7,7 @@ interface inputBoxPropsType {
   isHidden?: boolean;
   switchIsHidden?: () => void;
   isPassInput?: true;
-  reference?: React.RefObject<HTMLInputElement>;
+  reference?: React.RefObject<HTMLInputElement | null>;
   val?: string | string[];
   onChangeHandler?: (e: ChangeEvent<HTMLInputElement>) => void;
 }

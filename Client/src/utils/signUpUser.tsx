@@ -3,9 +3,9 @@ import validateUserInput from "./validateUserInput";
 import { toast } from "react-toastify";
 
 async function signUpUser(
-  usernameRef: React.RefObject<HTMLInputElement>,
-  emailRef: React.RefObject<HTMLInputElement>,
-  passwordRef: React.RefObject<HTMLInputElement>,
+  usernameRef: React.RefObject<HTMLInputElement | null>,
+  emailRef: React.RefObject<HTMLInputElement | null>,
+  passwordRef: React.RefObject<HTMLInputElement | null>,
   setInputErrorMsg: React.Dispatch<React.SetStateAction<string>>,
   switchTab: () => void
 ) {

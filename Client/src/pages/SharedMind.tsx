@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 import Macy from "macy";
-import { RootState } from "../config/redux/store";
+import type { RootState } from "../config/redux/store";
 
 interface MacyInstance {
   recalculate: (waitForImages?: boolean) => void;

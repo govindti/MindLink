@@ -1,4 +1,4 @@
-import { Content } from "../config/redux/contentSlice";
+import type { Content } from "../config/redux/contentSlice";
 
 // Filter Content Data
 function filterData(
