@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/auth" element={<ProtectedRoute><Auth /></ProtectedRoute>} />
             <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-            <Route path="/mind/:hash" element={<SharedBrain />} />
+            <Route path="/mind/:hash" element={<SharedMind />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
