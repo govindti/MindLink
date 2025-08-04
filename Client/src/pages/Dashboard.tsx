@@ -19,6 +19,76 @@ const Dashboard = () => {
     const [filterContent, setFilterContent] = useState("My Mind");
     const [isShareModalOpen, setIsShareModalOpen] = useState(false);
 
+    useContent("/content");
 
+    const content = useSelector((state: RootState) => state.content.content);
 
-}
+    const [dataToRender, setDataToRender] = useState<Content[]>(content);
+
+    useEffect(() => {
+        setDataToRender(content);
+    }, [content]);
+
+    const toggleAddContentModal = () => setIsModelOpen((prev) => !prev);
+    const toggleShareModal = () => setIsShareModalOpen((prev) => !prev);
+
+    const switchFilter = (filter: string) => {
+        setFilterContent(filter);
+        setIsSidebarOpen(false);
+    }
+    
+    useEffect(
+        () => filterData(filterContent, content, setDataToRender),
+        [filterContent, content]
+    );
+
+    return (
+        <div className="flex w-screen">
+            {/* Modals */}
+
+            <AddContentModal
+                isModalOpen={isModalOpen}
+                onModalClose={toggleAddContentModal}
+            />
+
+            {isShareModalOpen && (
+                <PopUpModal
+                    isShareModal={isShareModalOpen}
+                    closeModal={toggleShareModal}
+                    text={shareModalText}
+                    title={shareModalTitle}
+                />
+            )}
+
+            {/* Sidebar */}
+            <Sidebar
+                isSidebarOpen={isSidebarOpen}
+                setIsSidebarOpen={setIsSidebarOpen}
+                filterContent={filterContent}
+                switchFilter={switchFilter}
+            />
+
+            {/* Main Content */}
+            <div className="bg-bg-main md:absolute md:right-0 md:w-3/4 lg:w-5/6 mx-auto w-full flex justify-end flex-col">
+                <Header
+                    onBarsClick={() => setIsSidebarOpen(true)}
+                    onShareBrainClick={toggleShareModal}
+                    filterContent={filterContent}
+                />
+
+                <ContentSection dataToRender={dataToRender} />
+            </div>
+
+            <button
+                className="fixed bottom-6 right-6 bg-bg-primaryBtn text-white p-2 md:p-4 rounded-md hover:bg-opacity-90 transition-all text-lg"
+                onClick={toggleAddContentModal}
+            >
+                <Plus />
+            </button>
+
+            <ToastContainer autoClose={5000} closeOnClick position="top-center" />
+        </div>
+    );
+};
+
+export default Dashboard;

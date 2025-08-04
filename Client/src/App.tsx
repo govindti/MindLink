@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import NotFound from "./pages/NotFound";
 import store from "./config/redux/store";
 import Dashboard from "./pages/Dashboard";
-import SharedBrain from "./pages/SharedBrain";
+import SharedMind from "./pages/SharedMind";
 import LandingPage from "./pages/LandingPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
