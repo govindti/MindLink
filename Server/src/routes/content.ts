@@ -12,7 +12,7 @@ const contentRouter = express.Router();
 
 contentRouter.post("/", userAuth, createContent);
 
-contentRouter.get("/", userAuth, getContentBulk);
+contentRouter.get("/",  getContentBulk);
 
 contentRouter.get("/:id", userAuth, getContentById);
 

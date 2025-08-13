@@ -26,17 +26,37 @@ interface cardProps {
   isSharedBrain?: boolean;
 }
 
+// async function shareUrl(title: string, link: string) {
+//   try {
+//     await navigator.share({
+//       text: title,
+//       url: link,
+//     });
+//   } catch (error) {
+//     toast.error((error as Error).message || "Error sharing content");
+//     console.error(error);
+//   }
+// }
+
+
 async function shareUrl(title: string, link: string) {
-  try {
-    await navigator.share({
-      text: title,
-      url: link,
-    });
-  } catch (error) {
-    toast.error((error as Error).message || "Error sharing content");
-    console.error(error);
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        text: title,
+        url: link,
+      });
+    } catch (error) {
+      toast.error((error as Error).message || "Error sharing content");
+      console.error(error);
+    }
+  } else {
+    // Open a new window with the share URL for desktop
+    const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(link)}&text=${encodeURIComponent(title)}`;
+    window.open(shareUrl, '_blank', 'width=600,height=400');
   }
 }
+
 
 function createYoutubeUrl(link: string) {
   const videoIdMatch = link.match(/(?:v=|\/)([a-zA-Z0-9_-]{11})/);

@@ -10,7 +10,7 @@ interface authFormPropsType {
   isSignUpPage: boolean;
   switchTab: () => void;
 }
-
+console.log("backend route",import.meta.env.VITE_BACKEND_URL);
 const AuthForm = ({ isSignUpPage, switchTab }: authFormPropsType) => {
   const navigate = useNavigate();
   const usernameRef = useRef<HTMLInputElement>(null);

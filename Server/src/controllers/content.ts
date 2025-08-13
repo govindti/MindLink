@@ -40,6 +40,7 @@ export const createContent = async (req: Request, res: Response) => {
 
 export const getContentBulk = async (req: Request, res: Response) => {
   try {
+    console.log("controller called")
     const userId = req.body.userId;
     const results = await ContentModel.find({ userId }).populate(
       "userId",

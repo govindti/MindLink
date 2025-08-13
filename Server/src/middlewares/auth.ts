@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 
 export function userAuth(req: Request, res: Response, next: NextFunction) {
   try {
+    console.log("Request Body before userAuth:", req.body);
     const { token } = req.cookies;
 
     const result = jwt.verify(token, process.env.JWT_SECRET!);
@@ -17,7 +18,7 @@ export function userAuth(req: Request, res: Response, next: NextFunction) {
 
     // @ts-ignore
     req.body.userId = result.id;
-
+    console.log("Request Body after userAuth:", req.body);
     next();
   } catch (error) {
     console.error(error);
