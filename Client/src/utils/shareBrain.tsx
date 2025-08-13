@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { Location } from "react-router-dom";
+import { Location } from "react-router-dom";
 import { toast } from "react-toastify";
 
 interface shareBrainProps {

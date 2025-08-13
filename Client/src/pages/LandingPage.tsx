@@ -12,7 +12,7 @@ const LandingPage = () => {
     <div className="h-screen bg-bg-main flex flex-col items-center justify-center px-6">
       {/* App Title */}
       <h1 className="text-4xl sm:text-6xl font-extrabold text-text-primary text-center mb-6 py-4">
-        Welcome to <span className="text-bg-primaryBtn">MindLink</span>
+        Welcome to <span className="text-bg-primaryBtn">Brainly</span>
       </h1>
 
       {/* Subtitle */}

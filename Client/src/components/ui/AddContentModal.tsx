@@ -1,14 +1,13 @@
 import Button from "./Button";
 import Close from "../Icons/Close";
-import { useRef, useState } from "react";
-import type { RefObject } from "react"
+import { RefObject, useRef, useState } from "react";
 import axios from "axios";
 import { InputBox } from "../../config/config";
 import { contentTypes } from "../../config/contentTypes";
 import CirclePlus from "../Icons/CirclePlus";
 import createContent from "../../utils/createContent";
 import { useDispatch } from "react-redux";
-import type { AppDispatch } from "../../config/redux/store";
+import { AppDispatch } from "../../config/redux/store";
 
 axios.defaults.withCredentials = true;
 
@@ -19,9 +18,9 @@ interface AddContentModalProps {
 }
 
 function addContent(
-  titleRef: RefObject<HTMLInputElement | null>,
-  linkRef: RefObject<HTMLInputElement | null>,
-  tagRef: RefObject<HTMLInputElement | null>,
+  titleRef: RefObject<HTMLInputElement>,
+  linkRef: RefObject<HTMLInputElement>,
+  tagRef: RefObject<HTMLInputElement>,
   isSelected: Record<string, boolean>,
   onModalClose: () => void,
   dispatch: AppDispatch

@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import type { RefObject } from "react";
+import { RefObject, useRef, useState } from "react";
 import Close from "../Icons/Close";
 import { InputBox } from "../../config/config";
 import { contentTypes } from "../../config/contentTypes";
@@ -8,19 +7,19 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { updateContent } from "../../config/redux/contentSlice";
-import type { AppDispatch } from "../../config/redux/store";
+import { AppDispatch } from "../../config/redux/store";
 
 axios.defaults.withCredentials = true;
 
 function editContent(
-  titleRef: RefObject<HTMLInputElement | null>,
-  linkRef: RefObject<HTMLInputElement | null>,
+  titleRef: RefObject<HTMLInputElement>,
+  linkRef: RefObject<HTMLInputElement>,
   isSelected: {
     YouTube: boolean;
     "Twitter/X": boolean;
     Document: boolean;
   },
-  tagRef: RefObject<HTMLInputElement | null>,
+  tagRef: RefObject<HTMLInputElement>,
   closeEditModal: () => void,
   contentId: string,
   dispatch: AppDispatch

@@ -91,21 +91,21 @@ const AuthForm = ({ isSignUpPage, switchTab }: authFormPropsType) => {
           onClickHandler={
             isSignUpPage
               ? () =>
-                signUpUser(
-                  usernameRef,
-                  emailRef,
-                  passwordRef,
-                  setInputErrorMsg,
-                  switchTab
-                )
+                  signUpUser(
+                    usernameRef,
+                    emailRef,
+                    passwordRef,
+                    setInputErrorMsg,
+                    switchTab
+                  )
               : () =>
-                signInUser(
-                  usernameRef,
-                  passwordRef,
-                  setInputErrorMsg,
-                  navigate,
-                  dispatch
-                )
+                  signInUser(
+                    usernameRef,
+                    passwordRef,
+                    setInputErrorMsg,
+                    navigate,
+                    dispatch
+                  )
           }
         />
       </div>

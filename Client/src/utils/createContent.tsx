@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { addContent } from "../config/redux/contentSlice";
-import type { AppDispatch } from "../config/redux/store";
+import { AppDispatch } from "../config/redux/store";
 
 async function createContent(
   inputTitle: string,

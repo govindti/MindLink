@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import { ReactElement } from "react";
 
 interface buttonProps {
   name: string;
@@ -42,7 +42,7 @@ const Button = ({
         !isSelected?.[name]
           ? styleType[type || "primary"]
           : styleType["primary"]
-        } ${styleSize[size || "md"]} ${defaultStyles}`}
+      } ${styleSize[size || "md"]} ${defaultStyles}`}
       onClick={onClickHandler && onClickHandler}
     >
       {beforeIcon && beforeIcon}

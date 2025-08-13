@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 import { removeContent } from "../config/redux/contentSlice";
-import type { AppDispatch } from "../config/redux/store";
+import { AppDispatch } from "../config/redux/store";
 
 async function deleteContentOne(
   _id: string,

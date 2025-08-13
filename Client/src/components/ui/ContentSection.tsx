@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Card } from "./Card";
 import Macy from "macy";
-import type { Content } from "../../config/redux/contentSlice";
+import { Content } from "../../config/redux/contentSlice";
 
 interface ContentSectionProps {
   dataToRender: Content[];

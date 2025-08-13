@@ -2,12 +2,12 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import validator from "validator";
 import { addUser } from "../config/redux/userSlice";
-import type { AppDispatch } from "../config/redux/store";
-import type { NavigateFunction } from "react-router-dom";
+import { AppDispatch } from "../config/redux/store";
+import { NavigateFunction } from "react-router-dom";
 
 async function signInUser(
-  usernameRef: React.RefObject<HTMLInputElement | null>,
-  passwordRef: React.RefObject<HTMLInputElement | null>,
+  usernameRef: React.RefObject<HTMLInputElement>,
+  passwordRef: React.RefObject<HTMLInputElement>,
   setInputErrorMsg: React.Dispatch<React.SetStateAction<string>>,
   navigate: NavigateFunction,
   dispatch: AppDispatch

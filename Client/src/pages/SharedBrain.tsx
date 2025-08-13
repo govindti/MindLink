@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useRef } from "react";
 import Macy from "macy";
-import type { RootState } from "../config/redux/store";
+import { RootState } from "../config/redux/store";
 
 interface MacyInstance {
   recalculate: (waitForImages?: boolean) => void;
@@ -12,7 +12,7 @@ interface MacyInstance {
   remove: () => void;
 }
 
-const SharedMind = () => {
+const SharedBrain = () => {
   const { hash } = useParams();
 
   useContent(`/brain/share/${hash}`);
@@ -99,4 +99,4 @@ const SharedMind = () => {
   );
 };
 
-export default SharedMind;
+export default SharedBrain;

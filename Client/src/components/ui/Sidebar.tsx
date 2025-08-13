@@ -6,11 +6,10 @@ import Twitter from "../Icons/Twitter";
 import YouTube from "../Icons/YouTube";
 import { useNavigate } from "react-router-dom";
 import AppTitle from "./AppTitle";
-import type { Dispatch, SetStateAction } from "react";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import logout from "../../utils/logout";
 import { useDispatch, useSelector } from "react-redux";
-import type { RootState } from "../../config/redux/store";
+import { RootState } from "../../config/redux/store";
 import Profile from "../Icons/Profile";
 import Home from "../Icons/Home";
 import ArrowDown from "../Icons/ArrowDown";
@@ -62,17 +61,19 @@ const Sidebar = ({
 
   return (
     <div
-      className={` ${isSidebarOpen &&
+      className={` ${
+        isSidebarOpen &&
         "block bg-black bg-opacity-60 w-screen h-screen  fixed z-30 transition-all"
-        }`}
+      }`}
       onClick={(e: React.MouseEvent<HTMLDivElement>) => {
         if (e.target !== e.currentTarget) return;
         setIsSidebarOpen(false);
       }}
     >
       <div
-        className={`lg:w-1/6 md:w-1/4 sm:w-1/3 min-h-screen border border-text-secondary border-opacity-20 md:flex flex-col pl-4 transition-all bg-white fixed  ${isSidebarOpen ? "flex fixed z-50 bg-white overflow-hidden" : "hidden"
-          }`}
+        className={`lg:w-1/6 md:w-1/4 sm:w-1/3 min-h-screen border border-text-secondary border-opacity-20 md:flex flex-col pl-4 transition-all bg-white fixed  ${
+          isSidebarOpen ? "flex fixed z-50 bg-white overflow-hidden" : "hidden"
+        }`}
         onClick={(e: React.MouseEvent<HTMLDivElement>) => {
           if (e.target !== e.currentTarget) return;
           setIsProfileOpen(false);
@@ -91,8 +92,9 @@ const Sidebar = ({
           {sideItems.map(({ name, icon }) => (
             <ul
               key={name}
-              className={`flex gap-2 items-center text-lg cursor-pointer hover:bg-bg-tag px-2 py-1 transition-all rounded-l-lg ${filterContent === name && "bg-bg-tag"
-                }`}
+              className={`flex gap-2 items-center text-lg cursor-pointer hover:bg-bg-tag px-2 py-1 transition-all rounded-l-lg ${
+                filterContent === name && "bg-bg-tag"
+              }`}
               onClick={() => switchFilter(name)}
             >
               <div>{icon}</div> <p className="text-base">{name}</p>
